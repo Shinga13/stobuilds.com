@@ -1,0 +1,21 @@
+:root {
+    font-family: 'Overpass Variable', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    --bg: #1a1a1a;
+    --mbg: #2c2c2c;
+    --lbg: #333333;
+    --light-text: #eeeeee;
+    --border: #888888;
+    --accent: #8254ff;
+    --seperator: .075rem;
+}
+
+hr {
+    background-color: var(--border);
+    border: none;
+    height: var(--seperator);
+    width: 80%;
+}
+
+p {
+    color: var(--light-text);
+}
