@@ -16,6 +16,6 @@ hr {
     width: 80%;
 }
 
-p {
+* {
     color: var(--light-text);
 }

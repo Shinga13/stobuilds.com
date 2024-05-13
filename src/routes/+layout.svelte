@@ -2,9 +2,17 @@
     import '../app.css';
     import '@fontsource-variable/overpass';
     import { page } from '$app/stores';
-    import { onMount } from 'svelte';
 
-    onMount(() => console.log($page.route.id))
+    let page_route;
+    $: {
+        try {
+            page_route = $page.route.id.split('/').slice(1);
+        }
+        catch {
+            page_route = [];
+        }
+        console.log(page_route);
+    }
 </script>
 
 <style>
@@ -76,6 +84,16 @@
         z-index: 100;
     }
 
+    .link-button {
+        text-decoration: none;
+    }
+
+    .navbar {
+        align-items: center;
+        display: flex;
+        margin: 4rem auto 0 auto;
+    }
+
     .navlink {
         color: var(--light-text);
         font-size: 1.2rem;
@@ -88,9 +106,8 @@
     }
 
     .page-content {
-        /*border: 1px solid red;*/
         box-sizing: border-box;
-        margin: 6.5rem auto 0 auto;
+        margin: .5rem auto 0 auto;
         min-height: calc(100vh - 6.5rem - 6rem);
     }
 
@@ -98,23 +115,31 @@
         color: var(--accent);
         text-decoration: underline;
     }
+
+    .path-seperator {
+        font-weight: bold;
+        margin: 0 1rem;
+    }
 </style>
 
 <div class='header'>
     <a href='/' id='home-button'>STOBuilds</a>
     <nav id='main-navbar'>
-        <a href='/guides' class='navlink' class:selected={$page.route.id.startsWith('/guides')}>Guides</a>
-        <a href='/builds' class='navlink' class:selected={$page.route.id.startsWith('/builds')}>Builds</a>
-        <a href='/links' class='navlink' class:selected={$page.route.id.startsWith('/links')}>Links</a>
-        <a href='/apps' class='navlink' class:selected={$page.route.id.startsWith('/apps')}>Apps</a>
+        <a href='/guides' class='navlink' class:selected={page_route[0] == 'guides'}>Guides</a>
+        <a href='/builds' class='navlink' class:selected={page_route[0] == 'builds'}>Builds</a>
+        <a href='/links' class='navlink' class:selected={page_route[0] == 'links'}>Links</a>
+        <a href='/apps' class='navlink' class:selected={page_route[0] == 'apps'}>Apps</a>
     </nav>
     <a href='https://discord.gg/stobuilds' id='discord-link'>
         <img src='discord-icon.svg' alt='Discord' id='discord-icon'>
     </a>
 </div>
-<!-- <nav>
-    <a href="/">HOME</a>
-</nav> -->
+<nav class='navbar content-width'>
+    {#each page_route as route_element, i}
+        <span class='path-seperator'>/</span>
+        <a href='/{page_route.slice(0, i + 1).join('/')}' class='link-button'>{route_element}</a>
+    {/each}
+</nav>
 <div class='page-content content-width'>
     <slot/>
 </div>
