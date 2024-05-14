@@ -3,10 +3,76 @@
     --bg: #1a1a1a;
     --mbg: #2c2c2c;
     --lbg: #333333;
-    --light-text: #eeeeee;
-    --border: #888888;
+    --light-text: #eee;
+    --medium-text: #aaa;
+    --border: #555;
     --accent: #8254ff;
     --seperator: .075rem;
+    --spacing: 1.5rem;
+    --margin: .5rem;
+    border-collapse: collapse;
+}
+
+* {
+    color: var(--light-text);
+    font-weight: 200;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+}
+
+a {
+    box-shadow: inset 0 -.075rem 0 0 var(--accent);
+    color: var(--accent);
+    font-weight: 200;
+    text-decoration: none;
+}
+a:hover {
+    box-shadow: inset 0 -.15rem 0 0 var(--accent);
+}
+
+b {
+    font-weight: 500;
+}
+
+code {
+    background-color: var(--lbg);
+    border: var(--seperator) solid var(--border);
+    border-radius: .25rem;
+    color: var(--light-text);
+    display: inline-block;
+    font-family: 'Overpass Mono Variable';
+    padding: 0 .2rem 0 .2rem;
+    margin: .1rem;
+}
+
+h1, .h1 {
+    box-shadow: inset 0 -.075rem 0 0 var(--border);
+    display: block;
+    font-size: 2rem;
+    font-weight: 350;
+    letter-spacing: .05rem;
+    margin: 4rem var(--margin) 1rem var(--margin);
+}
+
+h2 {
+    font-size: 1.6rem;
+    font-weight: 350;
+    margin: 3rem var(--margin) var(--margin) var(--margin);
+}
+
+h3 {
+    font-size: 1.35rem;
+    font-weight: 350;
+    margin: 3rem var(--margin) var(--margin) var(--margin);
+}
+
+h4 {
+    color: var(--medium-text);
+    font-size: 1.2rem;
+    font-weight: 350;
+    margin: 2rem var(--margin) var(--margin) var(--margin);
+    text-transform: uppercase;
 }
 
 hr {
@@ -16,6 +82,63 @@ hr {
     width: 80%;
 }
 
-* {
+img.center {
+    border: none;
+    border-radius: var(--margin);
+    display: block;
+    margin: var(--spacing) auto;
+}
+
+img.side {
+    border: none;
+    border-radius: var(--margin);
+    display: block;
+    float: right;
+    margin: var(--spacing) var(--margin);
+}
+
+p {
+    font-size: 1.1rem;
+    margin: 0 var(--margin) var(--spacing) var(--margin);
+}
+
+pre {
+    background-color: var(--lbg);
+    border: var(--seperator) solid var(--accent);
+    border-radius: var(--margin);
     color: var(--light-text);
+    font-family: 'Overpass Mono Variable';
+    padding: var(--margin);
+}
+
+ul, ol {
+    font-size: 1.1rem;
+    margin: 0 var(--margin) 1rem var(--margin);
+    padding-left: .8rem;
+}
+
+ol li {
+    list-style-type: decimal;
+    line-height: 150%;
+    margin-left: var(--spacing);
+}
+ol li::marker {
+    font-weight: 300;
+}
+
+ul li {
+    list-style-type: disc;
+    line-height: 150%;
+    margin-left: var(--spacing);
+}
+ul li::marker {
+    color: var(--accent);
+}
+
+.heading {
+    box-shadow: none;
+    font-size: 3rem;
+    font-weight: 200;
+    letter-spacing: .1rem;
+    margin: var(--margin);
 }

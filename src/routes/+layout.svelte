@@ -1,29 +1,38 @@
 <script>
     import '../app.css';
     import '@fontsource-variable/overpass';
+    import '@fontsource-variable/overpass-mono'
     import { page } from '$app/stores';
+    import Discord from '$lib/icons/Discord.svelte';
 
+    let discord_color = '#aaa';
     let page_route;
     $: {
         try {
-            page_route = $page.route.id.split('/').slice(1);
+            page_route = $page.route.id.split('/');
+            page_route = page_route.slice(1);
         }
         catch {
             page_route = [];
         }
-        console.log(page_route);
     }
 </script>
 
 <style>
-    #discord-icon {
-        height: 2rem;
+    main {
+        height:100%;
+        margin: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
 
     #discord-link {
         align-items: center;
+        align-self: center;
+        box-shadow: none;
         display: flex;
         grid-column: 3;
+        height: fit-content;
         justify-self: end;
         margin-right: 4rem;
         max-width: max-content;
@@ -31,14 +40,14 @@
 
     #home-button {
         align-items: center;
-        background-image: url('favicon.webp');
+        background-image: url('/favicon.webp');
         background-position: 3.5rem 45%;
         background-repeat: no-repeat;
         background-size: 2.7rem;
+        box-shadow: none;
         color: var(--light-text);
         display: flex;
         font-size: 1.7rem;
-        font-weight: 200;
         grid-column: 1;
         height: 100%;
         letter-spacing: .05em;
@@ -69,7 +78,7 @@
     }
 
     .footer-text {
-        color: var(--border);
+        color: var(--medium-text);
     }
 
     .header {
@@ -85,19 +94,28 @@
     }
 
     .link-button {
+        border: none;
+        border-radius: .25rem;
+        box-shadow: none;
+        color: var(--medium-text);
+        padding: .1rem .25rem;
         text-decoration: none;
+    }
+    .link-button:hover {
+        background-color: var(--lbg);
     }
 
     .navbar {
         align-items: center;
         display: flex;
+        height: 2rem;
         margin: 4rem auto 0 auto;
     }
 
     .navlink {
+        box-shadow: none;
         color: var(--light-text);
         font-size: 1.2rem;
-        font-weight: 300;
         margin: 0 .5rem;
         text-decoration: none;
     }
@@ -106,9 +124,13 @@
     }
 
     .page-content {
-        box-sizing: border-box;
         margin: .5rem auto 0 auto;
-        min-height: calc(100vh - 6.5rem - 6rem);
+        min-height: calc(100vh - 13rem); /* 4rem (header), 2rem (navbar), ~7rem (footer) */
+    }
+
+    .path-seperator {
+        color: var(--medium-text);
+        margin: 0 1rem;
     }
 
     .selected {
@@ -116,38 +138,51 @@
         text-decoration: underline;
     }
 
-    .path-seperator {
-        font-weight: bold;
-        margin: 0 1rem;
+    .seperator {
+        padding-top: 1px;
     }
 </style>
+<svelte:head>
+    <title>STOBuilds</title>
+</svelte:head>
+<main>
+    <div class='header'>
+        <a href='/' id='home-button'>STOBuilds</a>
+        <nav id='main-navbar'>
+            <a href='/guides' class='navlink' class:selected={page_route[0] == 'guides'}>Guides</a>
+            <a href='/builds' class='navlink' class:selected={page_route[0] == 'builds'}>Builds</a>
+            <a href='/links' class='navlink' class:selected={page_route[0] == 'links'}>Links</a>
+            <a href='/apps' class='navlink' class:selected={page_route[0] == 'apps'}>Apps</a>
+        </nav>
+        <a href='https://discord.gg/stobuilds' id='discord-link' title='STOBuilds Discord'
+                on:mouseover={() => discord_color = '#8254ff'}
+                on:mouseout={ () => discord_color = '#aaa'}
+                on:focus={() => discord_color = '#8254ff'}
+                on:blur={() => discord_color = '#aaa'}>
+            <Discord color={discord_color}/>
+        </a>
+    </div>
 
-<div class='header'>
-    <a href='/' id='home-button'>STOBuilds</a>
-    <nav id='main-navbar'>
-        <a href='/guides' class='navlink' class:selected={page_route[0] == 'guides'}>Guides</a>
-        <a href='/builds' class='navlink' class:selected={page_route[0] == 'builds'}>Builds</a>
-        <a href='/links' class='navlink' class:selected={page_route[0] == 'links'}>Links</a>
-        <a href='/apps' class='navlink' class:selected={page_route[0] == 'apps'}>Apps</a>
+    <nav class='navbar content-width'>
+        {#if page_route[0] !== ''}
+            {#each page_route as route_element, i}
+                <span class='path-seperator'>/</span>
+                <a href='/{page_route.slice(0, i + 1).join('/')}' class='link-button'>{route_element}</a>
+            {/each}
+        {/if}
     </nav>
-    <a href='https://discord.gg/stobuilds' id='discord-link'>
-        <img src='discord-icon.svg' alt='Discord' id='discord-icon'>
-    </a>
-</div>
-<nav class='navbar content-width'>
-    {#each page_route as route_element, i}
-        <span class='path-seperator'>/</span>
-        <a href='/{page_route.slice(0, i + 1).join('/')}' class='link-button'>{route_element}</a>
-    {/each}
-</nav>
-<div class='page-content content-width'>
-    <slot/>
-</div>
-<div class='footer content-width'>
-    <hr>
-    <footer class='footer-content'>
-        <p class='footer-text'>Content Copyright © 2024 STOBuilds</p>
-    </footer>
-</div>
+
+    <div class='page-content content-width'>
+        <div class='seperator'><!-- seperator --></div>
+        <slot/>
+    </div>
+
+    <div class='footer content-width'>
+        <hr>
+        <footer class='footer-content'>
+            <p class='footer-text'>Content Copyright © 2024 STOBuilds</p>
+        </footer>
+    </div>
+</main>
 
 

@@ -17,6 +17,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@fontsource-variable/overpass": "^5.0.19"
+		"@fontsource-variable/overpass": "^5.0.19",
+		"@fontsource-variable/overpass-mono": "^5.0.18"
 	}
 }
