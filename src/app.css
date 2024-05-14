@@ -87,14 +87,23 @@ img.center {
     border-radius: var(--margin);
     display: block;
     margin: var(--spacing) auto;
+    max-width: 100%;
 }
 
-img.side {
+img.right {
     border: none;
     border-radius: var(--margin);
     display: block;
     float: right;
-    margin: var(--spacing) var(--margin);
+    margin: var(--spacing) var(--margin) var(--spacing) var(--spacing);
+}
+
+img.left {
+    border: none;
+    border-radius: var(--margin);
+    display: block;
+    float: left;
+    margin: var(--spacing) var(--spacing) var(--spacing) var(--margin);
 }
 
 p {

@@ -1,7 +1,7 @@
 <h1 class='heading'>STO Equipment and Trait Selector</h1>
 <h1>Introduction</h1>
 <p>
-    STO Equipment and Build Selector, called SETS, is a new and innovative planning tool for ship and ground builds as well as space and ground skill trees for Star Trek Online™ developed by the STO Community Developers. 
+    STO Equipment and Build Selector, called SETS, is a new and innovative planning tool for ship and ground builds as well as space and ground skill trees for Star Trek Online developed by the STO Community Developers. 
     Our main goal is to provide an easy and intuitive platform for optimizing every single aspect of a space or ground build, aimed at brand new and experienced players likewise. 
     You can also save and share your builds as JavaScript Object Notation (.json) or Portable Network Graphic (.png) file and even an in markdown pre-formatted text export optimized for Reddit posts is included. 
     Its unique connection to the STO Wiki almost guarantees an up-to-date database without the need of manual additions to the app itself.
