@@ -1,7 +1,7 @@
 <h1 class='heading'>Guides</h1>
 
 <div class='pane'>
-    <a href='/guides/[example-route]' class='pane-title'>[Example Guide]</a>
+    <a href='/guides' class='pane-title'>[Example Guide]</a>
     <p class='pane-desc'>
         [Example Description Example Description Example Description Example Description Example Description Example Description Example Description Example Description 
         Example Description Example Description Example Description Example Description Example Description Example Description Example Description Example Description]
@@ -9,7 +9,7 @@
 </div>
 
 <div class='pane'>
-    <a href='/guides/[example-route]' class='pane-title'>[Example Guide]</a>
+    <a href='/guides' class='pane-title'>[Example Guide]</a>
     <p class='pane-desc'>
         [Example Description Example Description Example Description Example Description Example Description Example Description Example Description Example Description 
         Example Description Example Description Example Description Example Description Example Description Example Description Example Description Example Description]

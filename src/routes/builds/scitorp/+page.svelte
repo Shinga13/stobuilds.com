@@ -4,7 +4,8 @@
 
     const category = 'SciTorp - Hybrid'; // <--- Insert category title here!
 
-    const builds = build_list.filter(build_obj => build_obj.category == category).toSorted((obj1, obj2) => obj1.title < obj2.title ? -1 : 1 );
+    const builds = build_list.filter(build_obj => build_obj.category == category);
+    builds.sort((obj1, obj2) => obj1.title < obj2.title ? -1 : 1 );
 </script>
 
 <h1 class='heading'>{category}</h1>
