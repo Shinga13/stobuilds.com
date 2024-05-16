@@ -7,6 +7,7 @@
     --medium-text: #aaa;
     --border: #555;
     --accent: #8254ff;
+    --accent-hover: #8254ff44;
     --seperator: .075rem;
     --spacing: 1.5rem;
     --margin: .5rem;
@@ -150,4 +151,26 @@ ul li::marker {
     font-weight: 200;
     letter-spacing: .1rem;
     margin: var(--margin);
+}
+
+.pane {
+    background-color: var(--lbg);
+    border-radius: var(--margin);
+    margin: .75rem var(--margin);
+    padding: var(--margin);
+}
+.pane:hover {
+    background-color: var(--mbg);
+}
+
+.pane-desc {
+    margin: .75rem 0 0 0;
+}
+
+.pane-title {
+    box-shadow: none;
+    font-size: 1.2rem;
+}
+.pane-title:hover {
+    box-shadow: inset 0 -.15rem 0 0 var(--accent);
 }

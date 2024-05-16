@@ -16,7 +16,7 @@
         padding: calc(.5 * var(--margin)) var(--margin) 0 var(--margin);
     }
     a.button:hover {
-        background-color: #8254ff44;
+        background-color: var(--accent-hover);
     }
 
     .image {
