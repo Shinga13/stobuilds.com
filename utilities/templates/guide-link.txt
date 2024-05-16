@@ -1,0 +1,6 @@
+<div class='pane'>
+    <a href='/guides/[route]' class='pane-title'>[Title]</a>
+    <p class='pane-desc'>
+        [Description]
+    </p>
+</div>

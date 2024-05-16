@@ -5,7 +5,7 @@
     description: "",
     tags: "",
     route: ""
-}
+},
 */
 
 export const build_list = [

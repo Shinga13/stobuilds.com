@@ -126,6 +126,7 @@
     .page-content {
         margin: .5rem auto 0 auto;
         min-height: calc(100vh - 13rem); /* 4rem (header), 2rem (navbar), ~7rem (footer) */
+        padding: 0 var(--margin)
     }
 
     .path-seperator {
