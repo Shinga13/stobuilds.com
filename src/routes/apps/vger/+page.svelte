@@ -29,7 +29,7 @@
     }
 </style>
 <h1 class='heading'>Visual Glossary for Easy Reference</h1>
-<a href='https://vger.netlify.app' class='button' target='_blank' referrerpolicy='no-referrer' rel='noopener noreferrer'>OPEN APP</a>
+<a href='https://vger.stobuilds.com' class='button' target='_blank' referrerpolicy='no-referrer' rel='noopener noreferrer'>OPEN APP</a>
 
 <h1>Introduction</h1>
 <p>
@@ -55,7 +55,7 @@
 <img src='/VGER/howto1.webp' alt='' class='right image'>
 <h2>General</h2>
 <p>
-    Once you visit the app on <a href="https://vger.netlify.app/" referrerpolicy='no-referrer' target="_blank" rel="noopener norreferrer">vger.netlify.app</a> you'll immediately see lots of images loading in 
+    Once you visit the app on <a href="https://vger.stobuilds.com" referrerpolicy='no-referrer' target="_blank" rel="noopener norreferrer">vger.stobuilds.com</a> you'll immediately see lots of images loading in 
     on the main body if the page. In the picture to the left you can see a part of that grid. Clicking on any of the cards will open it's description in the infobox on the sidebar. 
     If you hover over a card the items name will be shown.<br>Below the banner at the top of the page there is the main menu bar. You can switch
     to a different module by simply clicking on one of the buttons. On the right of the buttons you find the Search bar. Typing into it will automatically update the shown cards, you
