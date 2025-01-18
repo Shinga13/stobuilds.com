@@ -1,5 +1,8 @@
 <script>
+    import { innerWidth } from 'svelte/reactivity/window';
     import { categories } from '$lib/builds/category_list.js';
+
+    let is_mobile = $derived(innerWidth.current < 800);
 </script>
 
 <style>
@@ -24,10 +27,14 @@
     .category-button:hover {
         border: 1px solid var(--accent);
     }
+
+    .mobile {
+        grid-template-columns: 1fr;
+    }
 </style>
 
 <h1 class='heading'>Builds</h1>
-<div class='build-categories'>
+<div class='build-categories' class:mobile={is_mobile}>
     {#each categories as category}
         <a href='{'/builds/' + category.route}' class='category-button'>
             {category.name}

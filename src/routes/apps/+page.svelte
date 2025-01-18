@@ -1,3 +1,7 @@
+<script>
+    import MajorLink from "$lib/layout/MajorLink.svelte";
+</script>
+
 <h1 class='heading'>Apps</h1>
 <p>Open-source applications developed by the STO Community developers in cooperation with the STOBuilds Discord. Check out our <a href='https://github.com/STOCD'>GitHub</a> organization!</p>
 <a href='/apps/vger' class='h1'>VGER</a>
@@ -5,17 +9,20 @@
     The Visual Glossary for Easy Reference offers easy visual identification of all ingame items, including starship and personal traits as well as space and ground equipment. 
     It also features an acronym finder with descriptions and links to the relevant wiki page. <a href='https://vger.netlify.app' target='_blank' referrerpolicy='no-referrer' rel='noopener noreferrer'>Open App.</a>
 </p>
+<MajorLink href='/apps/vger'>learn more</MajorLink>
 
 <a href='/apps/sets' class='h1'>SETS</a>
 <p>
     Developed for building ships, ground setups and skills the STO Equipment and Trait Selector is a powerful build planning tool. Created builds can be shared by saving them as JSON or PNG.
 </p>
+<MajorLink href='/apps/sets'>learn more</MajorLink>
 
 <a href='/apps/oscr' class='h1'>OSCR</a>
 <p>
     The Open Source Combatlog Reader is the next generation combatlog parser, featuring detailed damage and heal breakdowns, various graphs and a live parser. Combatlogs can be uploaded to the leaderboards, which can be accessed with the app or online. 
     Download OSCR on our <a href='https://github.com/STOCD/OSCR-UI/releases' target='_blank' referrerpolicy='no-referrer' rel='noopener noreferrer'>GitHub page</a>.
 </p>
+<MajorLink href='/apps/oscr'>learn more</MajorLink>
 
 <h1>Support & Development</h1>
 <p>
