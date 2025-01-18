@@ -7,7 +7,6 @@
 
     let { children } = $props();
 
-    let discord_color = $state('#aaa');
     let base_route = $derived(page.route.id.split('/')[1] ?? '');
 </script>
 
@@ -24,11 +23,16 @@
         align-self: center;
         box-shadow: none;
         display: flex;
+        fill: var(--medium-text);
         grid-column: 3;
         height: fit-content;
         justify-self: end;
         margin-right: 4rem;
         max-width: max-content;
+    }
+
+    #discord-link:hover {
+        fill: var(--accent);
     }
 
     #home-button {
@@ -41,6 +45,7 @@
         color: var(--light-text);
         display: flex;
         font-size: 1.7rem;
+        font-weight: 300;
         grid-column: 1;
         height: 100%;
         letter-spacing: .05em;
@@ -57,7 +62,7 @@
     }
 
     .content-width {
-        max-width: 84rem;
+        max-width: 55rem;
     }
 
     .footer {
@@ -99,7 +104,7 @@
 
     .page-content {
         margin: 4.5rem auto 0 auto;
-        min-height: calc(100vh - 13rem); /* 4rem (header), 2rem (navbar), ~7rem (footer) */
+        min-height: calc(100vh - 10rem); /* 4rem (header), 2rem (navbar), ~4rem (footer) */
         padding: 0 var(--margin)
     }
 
@@ -112,9 +117,11 @@
         padding-top: 1px;
     }
 </style>
+
 <svelte:head>
     <title>STOBuilds</title>
 </svelte:head>
+
 <main>
     <div class='header'>
         <a href='/' id='home-button'>STOBuilds</a>
@@ -124,12 +131,8 @@
             <a href='/links' class='navlink' class:selected={base_route == 'links'}>Links</a>
             <a href='/apps' class='navlink' class:selected={base_route == 'apps'}>Apps</a>
         </nav>
-        <a href='https://discord.gg/stobuilds' id='discord-link' title='STOBuilds Discord'
-                onmouseover={() => discord_color = '#8254ff'}
-                onmouseout={ () => discord_color = '#aaa'}
-                onfocus={() => discord_color = '#8254ff'}
-                onblur={() => discord_color = '#aaa'}>
-            <Discord color={discord_color}/>
+        <a href='https://discord.gg/stobuilds' id='discord-link' title='STOBuilds Discord'>
+            <Discord/>
         </a>
     </div>
 
@@ -145,5 +148,3 @@
         </footer>
     </div>
 </main>
-
-

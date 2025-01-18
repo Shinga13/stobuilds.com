@@ -1,3 +1,9 @@
+<script>
+    import HOWTO1 from '$lib/assets/VGER/howto1.webp';
+    import HOWTO2 from '$lib/assets/VGER/howto2.webp';
+    import HOWTO3 from '$lib/assets/VGER/howto3.webp';
+</script>
+
 <style>
     a.button {
         align-items: center;
@@ -10,7 +16,6 @@
         font-size: 1.5rem;
         font-weight: 500;
         justify-content: center;
-        letter-spacing: 130%;
         margin: 0 auto;
         max-width: max-content;
         padding: calc(.5 * var(--margin)) var(--margin) 0 var(--margin);
@@ -19,8 +24,13 @@
         background-color: var(--accent-hover);
     }
 
-    .image {
-        height: 30rem;
+    .squared-image {
+        width: 25rem;
+        margin-top: 3rem;
+    }
+
+    .vertical-image {
+        width: 20rem;
         margin-top: 3rem;
     }
 
@@ -28,6 +38,7 @@
         clear: both;
     }
 </style>
+
 <h1 class='heading'>Visual Glossary for Easy Reference</h1>
 <a href='https://vger.stobuilds.com' class='button' target='_blank' referrerpolicy='no-referrer' rel='noopener noreferrer'>OPEN APP</a>
 
@@ -52,7 +63,7 @@
 </p>
 
 <h1>How-To</h1>
-<img src='/VGER/howto1.webp' alt='' class='right image'>
+<img src={HOWTO1} alt='infobox, icon grid and menubar overview' class='right squared-image'>
 <h2>General</h2>
 <p>
     Once you visit the app on <a href="https://vger.stobuilds.com" referrerpolicy='no-referrer' target="_blank" rel="noopener norreferrer">vger.stobuilds.com</a> you'll immediately see lots of images loading in 
@@ -62,7 +73,7 @@
     don't have to submit your entry. Besides that you can open the settings menu by clicking on the 'hamburger' button.
 </p>
 <div class='clear'></div>
-<img src='/VGER/howto2.webp' alt='' class='left image'>
+<img src={HOWTO2} alt='starship trait infobox' class='left vertical-image'>
 <h2>Infobox</h2>
 <p>
     Once you have a selected card, you can see a variety of information on the sidebar: The image of the selected item, its name and type and more. You can always click on the name
@@ -72,7 +83,7 @@
     a small number of volunteers after all. In both cases it is advised to visit the wiki page to see all the information.
 </p>
 <div class='clear'></div>
-<img src='/VGER/howto3.webp' alt='' class='right image'>
+<img src={HOWTO3} alt='settings overview' class='right vertical-image'>
 <h2>Settings</h2>
 <p>
     The settings menu almost is the most important feature of VGER. Here you can filter the items of the current module and have access to additional settings.<br>Clicking 
@@ -81,7 +92,7 @@
         you can hover over the buttons to see information about the filter it applies.<br><br>
     Below the module-specific filters you can select the card size you prefer and switch between the mobile and desktop versions of VGER.
 </p>
-<h2>Mobile</h2>
+<h2 class='clear'>Mobile</h2>
 <p>
     There is also a mobile version of VGER that should load by default when you open it on a mobile device. You can always manually switch between Mobile and Desktop mode 
     in the settings menu. <br><br> The only major difference between the Desktop and Mobile functionality of VGER is found inside the Acronyms module: To see the description 

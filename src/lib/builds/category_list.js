@@ -15,7 +15,7 @@ export const categories = [
         route: 'beams'
     },
     {
-        name: 'Beams & Cannons - DEW',
+        name: 'Mixed - DEW',
         route: 'dew'
     },
     {

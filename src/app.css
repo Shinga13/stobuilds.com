@@ -22,9 +22,12 @@
     scrollbar-color: var(--border) transparent;
 }
 
+::selection {
+    background-color: var(--accent-hover);
+}
+
 a {
     box-shadow: inset 0 -.075rem 0 0 var(--accent);
-    color: var(--accent);
     font-weight: 200;
     text-decoration: none;
 }
@@ -38,13 +41,11 @@ b {
 
 code {
     background-color: var(--lbg);
-    border: var(--seperator) solid var(--border);
     border-radius: .25rem;
     color: var(--light-text);
-    display: inline-block;
     font-family: 'Overpass Mono Variable';
     padding: 0 .2rem 0 .2rem;
-    margin: .1rem;
+    margin: 0 .1rem;
 }
 
 h1, .h1 {
@@ -109,12 +110,13 @@ img.left {
 
 p {
     font-size: 1.1rem;
+    line-height: 1.6rem;
     margin: 0 0 var(--spacing) 0;
 }
 
 pre {
-    background-color: var(--lbg);
-    border: var(--seperator) solid var(--accent);
+    background-color: var(--mbg);
+    border: var(--seperator) solid var(--border);
     border-radius: var(--margin);
     color: var(--light-text);
     font-family: 'Overpass Mono Variable';
@@ -142,9 +144,6 @@ ul li {
     line-height: 150%;
     margin-left: var(--spacing);
 }
-ul li::marker {
-    color: var(--accent);
-}
 
 .heading {
     box-shadow: none;
@@ -169,7 +168,6 @@ ul li::marker {
 }
 
 .pane-title {
-    box-shadow: none;
     font-size: 1.2rem;
 }
 .pane-title:hover {

@@ -16,7 +16,7 @@
         box-shadow: none;
         color: var(--light-text);
         display: block;
-        font-size: 2rem;
+        font-size: 1.6rem;
         height: 5.5rem;
         margin: .21rem;
         text-align: center;

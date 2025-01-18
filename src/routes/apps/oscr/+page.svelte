@@ -1,3 +1,8 @@
+<script>
+    import GALLERY1 from '$lib/assets/OSCR/gallery1.webp';
+    import GALLERY2 from '$lib/assets/OSCR/gallery2.webp';
+</script>
+
 <h1 class='heading'>Open Source Combatlog Reader</h1>
 <h1>Introduction</h1>
 <p>
@@ -11,5 +16,5 @@
     After downloading, unpack the archive and run the app by double-clicking the executable.
 </p>
 <h1>Gallery</h1>
-<img src='/OSCR/gallery1.webp' alt='' class='center'>
-<img src='/OSCR/gallery2.webp' alt='' class='center'>
+<img src={GALLERY1} alt='Overview Tab of OSCR' class='center'>
+<img src={GALLERY2} alt='Analysis Tab of OSCR' class='center'>
