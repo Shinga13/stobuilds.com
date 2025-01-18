@@ -1,6 +1,7 @@
 <script>
     import GALLERY1 from '$lib/assets/OSCR/gallery1.webp';
     import GALLERY2 from '$lib/assets/OSCR/gallery2.webp';
+    import GALLERY3 from '$lib/assets/OSCR/gallery3.webp';
 </script>
 
 <h1 class='heading'>Open Source Combatlog Reader</h1>
@@ -18,3 +19,4 @@
 <h1>Gallery</h1>
 <img src={GALLERY1} alt='Overview Tab of OSCR' class='center'>
 <img src={GALLERY2} alt='Analysis Tab of OSCR' class='center'>
+<img src={GALLERY3} alt='League Standings Tab of OCSR' class='center'>
