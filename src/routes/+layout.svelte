@@ -2,20 +2,13 @@
     import '../app.css';
     import '@fontsource-variable/overpass';
     import '@fontsource-variable/overpass-mono'
-    import { page } from '$app/stores';
+    import { page } from '$app/state';
     import Discord from '$lib/icons/Discord.svelte';
 
-    let discord_color = '#aaa';
-    let page_route;
-    $: {
-        try {
-            page_route = $page.route.id.split('/');
-            page_route = page_route.slice(1);
-        }
-        catch {
-            page_route = [];
-        }
-    }
+    let { children } = $props();
+
+    let discord_color = $state('#aaa');
+    let base_route = $derived(page.route.id.split('/')[1] ?? '');
 </script>
 
 <style>
@@ -93,25 +86,6 @@
         z-index: 100;
     }
 
-    .link-button {
-        border: none;
-        border-radius: .25rem;
-        box-shadow: none;
-        color: var(--medium-text);
-        padding: .1rem .25rem;
-        text-decoration: none;
-    }
-    .link-button:hover {
-        background-color: var(--lbg);
-    }
-
-    .navbar {
-        align-items: center;
-        display: flex;
-        height: 2rem;
-        margin: 4rem auto 0 auto;
-    }
-
     .navlink {
         box-shadow: none;
         color: var(--light-text);
@@ -124,14 +98,9 @@
     }
 
     .page-content {
-        margin: .5rem auto 0 auto;
+        margin: 4.5rem auto 0 auto;
         min-height: calc(100vh - 13rem); /* 4rem (header), 2rem (navbar), ~7rem (footer) */
         padding: 0 var(--margin)
-    }
-
-    .path-seperator {
-        color: var(--medium-text);
-        margin: 0 1rem;
     }
 
     .selected {
@@ -150,32 +119,23 @@
     <div class='header'>
         <a href='/' id='home-button'>STOBuilds</a>
         <nav id='main-navbar'>
-            <a href='/guides' class='navlink' class:selected={page_route[0] == 'guides'}>Guides</a>
-            <a href='/builds' class='navlink' class:selected={page_route[0] == 'builds'}>Builds</a>
-            <a href='/links' class='navlink' class:selected={page_route[0] == 'links'}>Links</a>
-            <a href='/apps' class='navlink' class:selected={page_route[0] == 'apps'}>Apps</a>
+            <a href='/guides' class='navlink' class:selected={base_route == 'guides'}>Guides</a>
+            <a href='/builds' class='navlink' class:selected={base_route == 'builds'}>Builds</a>
+            <a href='/links' class='navlink' class:selected={base_route == 'links'}>Links</a>
+            <a href='/apps' class='navlink' class:selected={base_route == 'apps'}>Apps</a>
         </nav>
         <a href='https://discord.gg/stobuilds' id='discord-link' title='STOBuilds Discord'
-                on:mouseover={() => discord_color = '#8254ff'}
-                on:mouseout={ () => discord_color = '#aaa'}
-                on:focus={() => discord_color = '#8254ff'}
-                on:blur={() => discord_color = '#aaa'}>
+                onmouseover={() => discord_color = '#8254ff'}
+                onmouseout={ () => discord_color = '#aaa'}
+                onfocus={() => discord_color = '#8254ff'}
+                onblur={() => discord_color = '#aaa'}>
             <Discord color={discord_color}/>
         </a>
     </div>
 
-    <nav class='navbar content-width'>
-        {#if page_route[0] !== ''}
-            {#each page_route as route_element, i}
-                <span class='path-seperator'>/</span>
-                <a href='/{page_route.slice(0, i + 1).join('/')}' class='link-button'>{route_element}</a>
-            {/each}
-        {/if}
-    </nav>
-
     <div class='page-content content-width'>
         <div class='seperator'><!-- seperator --></div>
-        <slot/>
+        {@render children()}
     </div>
 
     <div class='footer content-width'>

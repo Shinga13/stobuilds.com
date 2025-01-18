@@ -1,5 +1,5 @@
 <script>
-    export let color;
+    let { color } = $props();
 </script>
 
 <svg width="2rem" height="2rem" viewBox="0 0.5 24 24" fill="none !important" xmlns="http://www.w3.org/2000/svg">
