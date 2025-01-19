@@ -1,7 +1,10 @@
 <script>
+    import { innerWidth } from 'svelte/reactivity/window';
     import HOWTO1 from '$lib/assets/VGER/howto1.webp';
     import HOWTO2 from '$lib/assets/VGER/howto2.webp';
     import HOWTO3 from '$lib/assets/VGER/howto3.webp';
+
+    let is_mobile = $derived(innerWidth.current < 800);
 </script>
 
 <style>
@@ -34,6 +37,10 @@
         margin-top: 3rem;
     }
 
+    .mobile-image {
+        width: 100%;
+    }
+
     .clear {
         clear: both;
     }
@@ -63,7 +70,7 @@
 </p>
 
 <h1>How-To</h1>
-<img src={HOWTO1} alt='infobox, icon grid and menubar overview' class='right squared-image'>
+<img src={HOWTO1} alt='infobox, icon grid and menubar overview' class='right squared-image' class:mobile-image={is_mobile}>
 <h2>General</h2>
 <p>
     Once you visit the app on <a href="https://vger.stobuilds.com" referrerpolicy='no-referrer' target="_blank" rel="noopener norreferrer">vger.stobuilds.com</a> you'll immediately see lots of images loading in 
@@ -73,7 +80,7 @@
     don't have to submit your entry. Besides that you can open the settings menu by clicking on the 'hamburger' button.
 </p>
 <div class='clear'></div>
-<img src={HOWTO2} alt='starship trait infobox' class='left vertical-image'>
+<img src={HOWTO2} alt='starship trait infobox' class='left vertical-image' class:mobile-image={is_mobile}>
 <h2>Infobox</h2>
 <p>
     Once you have a selected card, you can see a variety of information on the sidebar: The image of the selected item, its name and type and more. You can always click on the name
@@ -83,7 +90,7 @@
     a small number of volunteers after all. In both cases it is advised to visit the wiki page to see all the information.
 </p>
 <div class='clear'></div>
-<img src={HOWTO3} alt='settings overview' class='right vertical-image'>
+<img src={HOWTO3} alt='settings overview' class='right vertical-image' class:mobile-image={is_mobile}>
 <h2>Settings</h2>
 <p>
     The settings menu almost is the most important feature of VGER. Here you can filter the items of the current module and have access to additional settings.<br>Clicking 
