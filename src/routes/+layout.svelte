@@ -12,7 +12,7 @@
     let { children } = $props();
 
     let is_mobile = $derived(innerWidth.current < 800);
-    let base_route = $derived(page.route.id.split('/')[1] ?? '');
+    let base_route = $derived(page.route.id?.split('/')[1] ?? '');
     let menu_open = $state(false);
 
     beforeNavigate(() => menu_open = false);

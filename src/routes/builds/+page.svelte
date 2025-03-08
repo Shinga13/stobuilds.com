@@ -1,6 +1,6 @@
 <script>
     import { innerWidth } from 'svelte/reactivity/window';
-    import { categories } from '$lib/builds/category_list.js';
+    import categories from '$lib/builds/_categories';
 
     let is_mobile = $derived(innerWidth.current < 800);
 </script>
@@ -35,9 +35,9 @@
 
 <h1 class='heading'>Builds</h1>
 <div class='build-categories' class:mobile={is_mobile}>
-    {#each categories as category}
-        <a href='{'/builds/' + category.route}' class='category-button'>
-            {category.name}
+    {#each Object.entries(categories) as category}
+        <a href='{'/builds/' + category[0]}' class='category-button'>
+            {category[1]}
         </a>
     {/each}
 </div>

@@ -156,6 +156,13 @@ ul li {
     margin: var(--margin) 0;
 }
 
+.medium-heading {
+    box-shadow: none;
+    font-size: 2.5rem;
+    font-weight: 200;
+    margin: var(--margin) 0;
+}
+
 .pane {
     background-color: var(--lbg);
     border-radius: var(--margin);

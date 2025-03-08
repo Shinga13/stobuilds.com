@@ -1,21 +1,25 @@
 # How to add a Build
 
-Create a new route by copying the `[new-route]` template to the desired location; for builds this 
-must be inside the respective categories folder. Rename the folder to match the route 
-you want to use for the build. Short but concise route names are preferred.
+Create a markdown file with a short, but precise name in `builds/[category-route]` where `[category-route]` is the route of the category as found in [_categories.js](/src/lib/builds/_categories.js). *Example*: `builds/dewsci/titan_phaser_secdef.md`
 
-Edit the `+page.svelte` file inside the newly created folder. Replace "Title" in the first line 
-with the title of your guide (it is not required for the title to match the route). Now add content 
-to the page below the first line.
+Add the following metadata section to the top of the file:
+```
+---
+title:
+description:
+tags:
+route:
+---
+```
 
-Finally, add the build to the list of builds: Insert the content of `build-object.txt` into 
-the `/src/lib/builds/build_list.js` file after the last already existing object, but before the 
-closing bracket (`]`). Fill in the gaps of the inserted template, always in between the double 
-quotes:
-- **title**: title of your build; should match the title set in the `+page.svelte` file
-- **category**: name of the category; must be identical to a category name inside 
-`/src/lib/builds/category_list.js`
-- **description**: build description; will be displayed on the categories page
-- **tags**: tags for the build; invisible, but the search will filter them too; key words seperated 
-by whitespaces
-- **route**: the builds route; must be identical to the folder name (=route) of the build
+- `title`: Expressive title for the build.
+- `description`: Short description of the build.
+- `tags`: Used to add hidden terms that can be searched for (optional).
+- `route`: Route to this build, must be unique within this category. Make sure this is valid in URLs (Rule of thumb: only use ascii letters, dashes and underscores). If omitted, the file name will be used as route. In this case the file name (without extension) must be valid in URLs.
+
+Now add your build below the metadata section using markdown syntax.
+
+Images should be added like this: `![alt](/i/path)`
+- `alt` should be a short description of the image in case it cannot be displayed.
+- `path` is the path to the image in [/src/lib/assets/](/src/lib/assets/). Arbitrary subfolders can be created to organize the images. Images and folders must be valid in URLs. Make sure to retain the `/i/` in the beginning of the path.
+*Example*: `![Trait Infobox](/i/VGER/howto2.webp)` will show [this](/src/lib/assets/VGER/howto2.webp) image
