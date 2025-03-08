@@ -1,17 +1,14 @@
+<script>
+    import guides_index from '$lib/builds_guides/_guides_index.json';
+</script>
+
 <h1 class='heading'>Guides</h1>
 
-<div class='pane'>
-    <a href='/guides' class='pane-title'>[Example Guide]</a>
-    <p class='pane-desc'>
-        [Example Description Example Description Example Description Example Description Example Description Example Description Example Description Example Description 
-        Example Description Example Description Example Description Example Description Example Description Example Description Example Description Example Description]
-    </p>
-</div>
-
-<div class='pane'>
-    <a href='/guides' class='pane-title'>[Example Guide]</a>
-    <p class='pane-desc'>
-        [Example Description Example Description Example Description Example Description Example Description Example Description Example Description Example Description 
-        Example Description Example Description Example Description Example Description Example Description Example Description Example Description Example Description]
-    </p>
-</div>
+{#each Object.entries(guides_index) as [_, guide]}
+    <div class='pane'>
+        <a href='/guides/{guide.route}' class='pane-title'>{guide.title}</a>
+        <p class='pane-desc'>
+            {guide.description}
+        </p>
+    </div>
+{/each}

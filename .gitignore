@@ -1,4 +1,5 @@
 node_modules
+src/lib/builds_guides/*.json
 
 # Output
 .output

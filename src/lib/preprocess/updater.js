@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-import categories from '../builds/_categories.js';
+import categories from '../builds_guides/_categories.js';
 import showdown from "showdown";
 
 
@@ -24,7 +24,16 @@ function empty_build_meta() {
     }
 }
 
-function update_builds() {
+function empty_guide_meta() {
+    return {
+        title: '',
+        description: '',
+        tags: '',
+        route: ''
+    }
+}
+
+function update_builds_and_guides() {
     const classMap = {
         img: 'center',
     }
@@ -36,8 +45,14 @@ function update_builds() {
         replace: `<${key} class="${classMap[key]}" $1>`
     }));
 
-    const conv = new showdown.Converter({ metadata: true, strikethrough: true, extensions: [...bindings] })
+    const conv = new showdown.Converter({
+        metadata: true,
+        strikethrough: true,
+        tables: true,
+        extensions: [...bindings]
+    });
 
+    // builds
     let source_folder;
     let build_text;
     let page_meta;
@@ -59,6 +74,7 @@ function update_builds() {
                 build_text = fs.readFileSync(`${source_folder}/${build_file}`, 'utf-8');
                 build_text = conv.makeHtml(build_text);
                 page_meta = {...empty_build_meta(), ...conv.getMetadata()};
+                Object.keys(page_meta).forEach(key => page_meta[key] = page_meta[key].replaceAll('&amp;#58;', ':'));
                 if (page_meta.title === '') {
                     page_meta.title = get_file_name(build_file);
                 }
@@ -88,8 +104,43 @@ function update_builds() {
         };
     }
 
-    fs.writeFileSync('src/lib/builds/_build_index.json', JSON.stringify(build_index));
-    fs.writeFileSync('src/lib/builds/_build_data.json', JSON.stringify(build_data));
+    fs.writeFileSync('src/lib/builds_guides/_build_index.json', JSON.stringify(build_index));
+    fs.writeFileSync('src/lib/builds_guides/_build_data.json', JSON.stringify(build_data));
+
+    // guides
+    const guide_index = {};
+    const guide_data = {};
+    let guide_text;
+    source_folder = 'guides';
+    source_files = fs.readdirSync(source_folder).filter(file_name => file_name.endsWith('.md'));
+    if (source_files.length > 0) {
+        for (let guide_file of source_files) {
+            guide_text = fs.readFileSync(`${source_folder}/${guide_file}`, 'utf-8');
+            guide_text = conv.makeHtml(guide_text);
+            page_meta = {...empty_guide_meta(), ...conv.getMetadata()};
+            Object.keys(page_meta).forEach(key => page_meta[key] = page_meta[key].replaceAll('&amp;#58;', ':'));
+            if (page_meta.title === '') {
+                page_meta.title = get_file_name(guide_file);
+            }
+            if (page_meta.route === '') {
+                page_meta.route = get_file_name(guide_file);
+            }
+            guide_index[page_meta.route] = page_meta;
+            guide_data[page_meta.route] = guide_text;
+        }
+    }
+    else {
+        guide_index.example = {
+            title: 'Example Guide Title',
+            description: 'Example Guide Description Example Guide Description Example Guide Description Example Guide Description Example Guide Description Example Guide Description Example Guide Description',
+            tags: '',
+            route: 'example'
+        };
+        guide_data.example = '<p>Page content will appear here.</p>';
+    }
+    
+    fs.writeFileSync('src/lib/builds_guides/_guides_index.json', JSON.stringify(guide_index));
+    fs.writeFileSync('src/lib/builds_guides/_guides_data.json', JSON.stringify(guide_data));
 }
 
-update_builds();
+update_builds_and_guides();

@@ -1,6 +1,6 @@
-# How to add a Build
+# How to add a Guide
 
-Create a markdown file with a short, but precise name in `builds/[category-route]` where `[category-route]` is the route of the category as found in [_categories.js](/src/lib/builds/_categories.js). *Example*: `builds/dewsci/titan_phaser_secdef.md`
+Create a markdown file with a short, but precise name in the `guides` folder. *Example*: `guides/dil_exchange_guide.md`
 
 Add the following metadata section to the top of the file:
 ```
@@ -12,14 +12,14 @@ route:
 ---
 ```
 
-- `title`: Expressive title for the build.
-- `description`: Short description of the build.
+- `title`: Expressive title for the guide.
+- `description`: Short description of the guide.
 - `tags`: Used to add hidden terms that can be searched for (optional).
-- `route`: Route to this build, must be unique within this category. Make sure this is valid in URLs (Rule of thumb: only use ascii letters, dashes and underscores). If omitted, the file name will be used as route. In this case the file name (without extension) must be valid in URLs.
+- `route`: Route to this guide, must be unique among all guides. Make sure this is valid in URLs (Rule of thumb: only use ascii letters, dashes and underscores). If omitted, the file name will be used as route. In this case the file name (without extension) must be valid in URLs.
 
 *Note*: If you want to use a colon in the title or description, escape it using `&#58;`.
 
-Now add your build below the metadata section using markdown syntax.
+Now add your guide below the metadata section using markdown syntax.
 
 Images should be added like this: `![alt](/i/path)`
 - `alt` should be a short description of the image in case it cannot be displayed.

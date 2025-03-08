@@ -1,6 +1,6 @@
 <script>
     import { innerWidth } from 'svelte/reactivity/window';
-    import categories from '$lib/builds/_categories';
+    import categories from '$lib/builds_guides/_categories';
 
     let is_mobile = $derived(innerWidth.current < 800);
 </script>

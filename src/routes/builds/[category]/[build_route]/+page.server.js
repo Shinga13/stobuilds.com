@@ -1,5 +1,5 @@
-import build_data from '$lib/builds/_build_data.json';
-import build_index from '$lib/builds/_build_index.json';
+import build_data from '$lib/builds_guides/_build_data.json';
+import build_index from '$lib/builds_guides/_build_index.json';
 import { error } from "@sveltejs/kit";
 
 export async function load({ params }) {

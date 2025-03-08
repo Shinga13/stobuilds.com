@@ -1,5 +1,5 @@
-import categories from "$lib/builds/_categories";
-import build_index from '$lib/builds/_build_index.json';
+import categories from "$lib/builds_guides/_categories";
+import build_index from '$lib/builds_guides/_build_index.json';
 import { error } from "@sveltejs/kit";
 
 export async function load({ params }) {
