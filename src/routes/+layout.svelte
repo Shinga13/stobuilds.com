@@ -204,7 +204,7 @@
                 <a href='/links' class='navlink' class:selected={base_route == 'links'}>Links</a>
                 <a href='/apps' class='navlink' class:selected={base_route == 'apps'}>Apps</a>
             </nav>
-            <a href='https://discord.gg/stobuilds' id='discord-link' title='STOBuilds Discord'>
+            <a href='https://discord.gg/stobuilds' id='discord-link' title='STOBuilds Discord' target='_blank' rel='noreferrer'>
                 <Discord/>
             </a>
         {:else}
@@ -221,7 +221,7 @@
                             <a href='/apps' class='navlink' class:selected={base_route == 'apps'}>Apps</a>
                         </nav>
                         <hr>
-                        <a href='https://discord.gg/stobuilds' class='menu-external-link' title='STOBuilds Discord'>
+                        <a href='https://discord.gg/stobuilds' class='menu-external-link' title='STOBuilds Discord' target='_blank' rel='noreferrer'>
                             Discord<span class='inline-icon'><ExternalLink/></span>
                         </a>
                     </div>

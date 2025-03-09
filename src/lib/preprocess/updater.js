@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import categories from '../builds_guides/_categories.js';
 import showdown from "showdown";
+import flexsearch from "flexsearch";
 
 
 function get_file_name(file_name) {
@@ -58,6 +59,7 @@ function update_builds_and_guides() {
     let page_meta;
     let source_files;
     const build_index = {};
+    const build_index_flat = {};
     const build_data = {};
 
     for (let category in categories) {
@@ -83,6 +85,12 @@ function update_builds_and_guides() {
                 }
                 page_meta.category = categories[category];
                 build_index[category][page_meta.route] = page_meta;
+                build_index_flat[page_meta.route] = {
+                    title: page_meta.title,
+                    description: page_meta.description,
+                    tags: page_meta.tags,
+                    route: `${category}/${page_meta.route}`
+                };
                 build_data[category][page_meta.route] = build_text;
             }
         }
@@ -99,12 +107,20 @@ function update_builds_and_guides() {
                 route: 'example'
             }
         };
+        const example_route = `${example_cat}/example`;
+        build_index_flat[example_route] = {
+            title: 'Example Build Title',
+            description: 'Description goes here. Description goes here. Description goes here. Description goes here. Description goes here. Description goes here. Description goes here. Description goes here.',
+            tags: 'tag',
+            route: example_route
+        }
         build_data[example_cat] = {
             example: '<p>Page content will appear here.</p>'
         };
     }
 
     fs.writeFileSync('src/lib/builds_guides/_build_index.json', JSON.stringify(build_index));
+    fs.writeFileSync('src/lib/builds_guides/_build_index_flat.json', JSON.stringify(build_index_flat));
     fs.writeFileSync('src/lib/builds_guides/_build_data.json', JSON.stringify(build_data));
 
     // guides

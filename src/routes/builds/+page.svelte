@@ -1,6 +1,7 @@
 <script>
     import { innerWidth } from 'svelte/reactivity/window';
     import categories from '$lib/builds_guides/_categories';
+    import SearchBar from '$lib/search/SearchBar.svelte';
 
     let is_mobile = $derived(innerWidth.current < 800);
 </script>
@@ -9,6 +10,7 @@
     .build-categories {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        margin-top: var(--margin);
     }
 
     .category-button {
@@ -34,6 +36,9 @@
 </style>
 
 <h1 class='heading'>Builds</h1>
+
+<SearchBar page='builds'/>
+
 <div class='build-categories' class:mobile={is_mobile}>
     {#each Object.entries(categories) as category}
         <a href='{'/builds/' + category[0]}' class='category-button'>

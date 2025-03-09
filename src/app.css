@@ -1,5 +1,5 @@
 :root {
-    font-family: 'Overpass Variable', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    --font: 'Overpass Variable', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     --bg: #1a1a1a;
     --mbg: #2c2c2c;
     --lbg: #333333;
@@ -11,6 +11,7 @@
     --seperator: .075rem;
     --spacing: 1.5rem;
     --margin: .5rem;
+    font-family: var(--font);
     border-collapse: collapse;
 }
 

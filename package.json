@@ -1,13 +1,13 @@
 {
 	"name": "stobuilds.com",
 	"private": true,
-	"version": "2.0.0",
+	"version": "3.0.0",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "node src/lib/preprocess/updater && vite build",
 		"preview": "vite preview",
-        "update": "node src/lib/preprocess/updater"
+		"update": "node src/lib/preprocess/updater"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-netlify": "^4.4.0",
@@ -19,6 +19,7 @@
 	},
 	"dependencies": {
 		"@fontsource-variable/overpass": "^5.1.2",
-		"@fontsource-variable/overpass-mono": "^5.1.1"
+		"@fontsource-variable/overpass-mono": "^5.1.1",
+		"flexsearch": "^0.7.43"
 	}
 }
