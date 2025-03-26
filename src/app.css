@@ -12,7 +12,6 @@
     --spacing: 1.5rem;
     --margin: .5rem;
     font-family: var(--font);
-    border-collapse: collapse;
 }
 
 * {
@@ -50,6 +49,7 @@ code {
     font-family: 'Overpass Mono Variable';
     padding: 0 .2rem 0 .2rem;
     margin: 0 .1rem;
+    white-space: pre;
 }
 
 h1, .h1 {
@@ -126,6 +126,30 @@ pre {
     font-family: 'Overpass Mono Variable';
     margin: 0 0 var(--spacing) 0;
     padding: var(--margin);
+}
+
+strong {
+    font-weight: normal;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    padding: var(--margin);
+}
+
+th {
+    border: 1px solid var(--border);
+    border-bottom: 0.15rem solid var(--border);
+    padding: var(--margin);
+}
+
+tr:last-child {
+    border-bottom: 1px solid var(--border);
 }
 
 ul, ol {
