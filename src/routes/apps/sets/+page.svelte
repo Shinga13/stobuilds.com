@@ -19,9 +19,8 @@
 </ul>
 <h1>Downloads & Installation</h1>
 <p>
-    SETS is available as script version and executable for windows. Currently only the script version is up to date and can be downloaded <a href='https://github.com/STOCD/SETS' target='_blank' referrerpolicy='no-referrer' rel='noopener noreferrer'>here</a>. 
-    Check out the <a href='/apps/sets/installation'>installation guide</a> for a detailed description on how to install the app manually. For Windows users 
-    <a href='https://github.com/STOCD/SETS_LOADER/' target='_blank' referrerpolicy='no-referrer' rel='noopener noreferrer'>SETS Loader</a> is an easy way to automate the script installation process. Visit the provided link and follow the instructions there.
+    SETS is available as script version and executable for windows. You can download the executable <a href='https://github.com/STOCD/SETS/releases' target='_blank' referrerpolicy='no-referrer' rel='noopener noreferrer'>here</a>.
+    The script version is available from the <a href='https://github.com/STOCD/SETS' target='_blank' referrerpolicy='no-referrer' rel='noopener noreferrer'>GitHub repository</a>. Check out the <a href='/apps/sets/installation'>installation guide</a> for a detailed description on how to install the app manually.
 </p>
 
 <!-- <h1>Manual</h1>
