@@ -1,0 +1,44 @@
+[
+    {
+        "title": "Clicky-focused EPG build on the Sui'Mor Temporal Science Vessel",
+        "file": "Sui'Mor EPG",
+        "author": "HornblowersHeir",
+        "desc": ""
+    },
+    {
+        "title": "SciTorp Hybrid build on the Lo'LaH Intel Dyson Science Destroyer",
+        "file": "Lo'laH SciTorp",
+        "author": "Rastilion",
+        "desc": "For general play, easily capable of elite content."
+    },
+    {
+        "title": "Phaser CSV build on the Denorios Bajoran Interceptor",
+        "file": "Denorios Phaser CSV",
+        "author": "HornblowersHeir",
+        "desc": "Slightly themed."
+    },
+    {
+        "title": "Phaser BO build on the Legendary Akira Multi-Mission Command Cruiser",
+        "file": "Legendary Akira Phaser BO",
+        "author": "Force_Leo",
+        "desc": ""
+    },
+    {
+        "title": "Catch-All Space Skill Tree",
+        "file": "space skill tree",
+        "author": "Shinga",
+        "desc": "Usable for all playstyles. Includes Tac Ultimate ability with all three enhancements."
+    },
+    {
+        "title": "Ground Skill Tree",
+        "file": "ground skill tree",
+        "author": "Shinga",
+        "desc": "Usable for all playstyles. Boring, but the go-to."
+    },
+    {
+        "title": "Disruptor CSV build on the Garrett Command Allicance Dreadnought Cruiser",
+        "file": "Garrett Disruptor CSV",
+        "author": "Z",
+        "desc": "For general content."
+    }
+]
