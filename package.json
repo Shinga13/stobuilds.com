@@ -1,11 +1,11 @@
 {
 	"name": "stobuilds.com",
 	"private": true,
-	"version": "3.2.1",
+	"version": "3.2.2",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "node src/lib/preprocess/updater && vite build",
+		"build": "node src/lib/preprocess/updater && vite build && node src/lib/preprocess/copyfiles",
 		"preview": "vite preview",
 		"update": "node src/lib/preprocess/updater"
 	},
