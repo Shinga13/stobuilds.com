@@ -17,7 +17,8 @@
 
 <style>
     #popout-viewer {
-        backdrop-filter: blur(2px) saturate(20%);
+        backdrop-filter: blur(2px);
+        background-color: #1a1a1add;
         box-sizing: border-box;
         height: calc(100vh - 4rem);
         left: 0;
