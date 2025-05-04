@@ -23,5 +23,5 @@ Now add your build below the metadata section using markdown syntax.
 
 Images should be added like this: `![alt](/i/path)`
 - `alt` should be a short description of the image in case it cannot be displayed.
-- `path` is the path to the image in [/src/lib/assets/](/src/lib/assets/). Arbitrary subfolders can be created to organize the images. Images and folders must be valid in URLs. Make sure to retain the `/i/` in the beginning of the path.
-*Example*: `![Trait Infobox](/i/VGER/howto2.webp)` will show [this](/src/lib/assets/VGER/howto2.webp) image
+- `path` is the path to the image in [/static/assets/](/static/assets/). Arbitrary subfolders can be created to organize the images. Images and folders must be valid in URLs. Make sure to retain the `/i/` in the beginning of the path.
+*Example*: `![Space Skill Tree](/i/gallery_builds/space skill tree.png)` will show [this](/static/assets/gallery_builds/space%20skill%20tree.png) image

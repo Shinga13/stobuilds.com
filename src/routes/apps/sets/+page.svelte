@@ -1,6 +1,8 @@
 <script>
     import MajorLink from "$lib/layout/MajorLink.svelte";
-    import G2 from '$lib/assets/SETS/gallery_builds/space skill tree.png';
+    import G1 from '$lib/assets/SETS/Hirogen_Phaser_CSV.webp';
+    import G2 from '$lib/assets/SETS/space_skill_tree.webp';
+    import G3 from '$lib/assets/SETS/Qowat_Milat_ground.webp';
 </script>
 
 <h1 class='heading'>STO Equipment and Trait Selector</h1>
@@ -40,4 +42,6 @@
 <a href='/apps/sets' target='_blank' referrerpolicy='no-referrer' rel='noopener noreferrer'>here</a>.</p> -->
 
 <h1>Gallery</h1>
+<img class='center' src={G1} alt='Space build section showing a Hirogen Hunter Phaser CSV build' loading='lazy'>
 <img class='center' src={G2} alt='Space Skill Tree' loading='lazy'>
+<img class='center' src={G3} alt='Ground build section' loading='lazy'>

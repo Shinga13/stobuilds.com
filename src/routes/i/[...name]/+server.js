@@ -2,7 +2,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { error } from '@sveltejs/kit';
 
-const IMG_DIR = 'src/lib/assets';
+const in_dev = import.meta.env.DEV;
+let IMG_DIR;
+if (in_dev) {
+    IMG_DIR = 'static/assets';
+}
+else {
+    IMG_DIR = 'assets';
+}
 
 export async function GET({ params }) {
     const file_path = path.normalize(path.join(IMG_DIR, params.name));

@@ -1,7 +1,7 @@
 <script>
     import { page } from '$app/state';
     import { goto } from '$app/navigation';
-    import { innerWidth } from 'svelte/reactivity/window';
+    import { innerHeight, innerWidth } from 'svelte/reactivity/window';
     import builds from '$lib/build_gallery/gallery_index.json';
     import Close from '$lib/icons/Close.svelte';
     const build_len = builds.length;
@@ -13,6 +13,7 @@
         return null;
     });
     let is_mobile = $derived(innerWidth.current < 800);
+    let compact_view = $derived(innerHeight.current < 800);
 </script>
 
 <style>
@@ -27,18 +28,24 @@
         top: 4rem;
         width: 100vw;
     }
+    #popout-viewer.compact_view {
+        height: 100dvh;
+        padding: 1rem;
+        top: 0;
+        z-index: 101;
+    }
 
     .download-link {
         margin-top: var(--margin);
         height: min-content;
     }
-
+    
     
     .flexbar {
         display: flex;
         width: 100%;
     }
-
+    
     .gallery-grid {
         display: grid;
         gap: var(--margin);
@@ -46,36 +53,44 @@
         margin-bottom: var(--spacing);
         max-width: 100%;
     }
-
+    
     .img-container {
         margin: var(--margin) auto 0 auto;
         width: fit-content;
+        z-index: -1;
     }
-
+    
     .mobile {
         grid-template-columns: 1fr;
     }
-
+    
     .popout-author {
         margin-left: auto;
         margin-top: var(--margin);
         white-space: nowrap;
     }
-
+    
     .popout-desc {
         margin: 0;
     }
-
+    .popout-desc.compact_view {
+        display: none;
+    }
+    
     .popout-img {
         display: block;
         object-fit: scale-down;
         max-width: 100%;
         max-height: calc(100vh - 16rem);
     }
-
+    .popout-img.compact_view {
+        max-height: calc(100dvh - 7rem);
+    }
+    
     .popout-title {
         margin: 0 auto 0 0;
     }
+    
 
     .thumb {
         aspect-ratio: 16/9;
@@ -109,18 +124,18 @@
 </style>
 
 {#if show_build !== null}
-    <div id='popout-viewer'>
+    <div id='popout-viewer' class:compact_view>
         <div class='flexbar'>
             <h3 class='popout-title'>{builds[show_build].title}</h3>
             <button class='tool-button' onclick={() => goto('?')}>
                 <Close/>
             </button>
         </div>
-        <p class='popout-desc'>{builds[show_build].desc}</p>
+        <p class='popout-desc' class:compact_view>{builds[show_build].desc}</p>
         <div class='img-container'>
-            <img class='popout-img' src='/i/SETS/gallery_builds/{builds[show_build].file}.png' alt={builds[show_build].title} loading="lazy">
+            <img class='popout-img' class:compact_view src='/i/gallery_builds/{builds[show_build].file}.png' alt={builds[show_build].title} loading="lazy">
             <div class='flexbar'>
-                <a class='download-link' href='/i/SETS/gallery_builds/{builds[show_build].file}.png' download>Download</a>
+                <a class='download-link' href='/i/gallery_builds/{builds[show_build].file}.png' download>Download</a>
                 <p class='popout-author'>Author: {builds[show_build].author}</p>
             </div>
         </div>
@@ -132,7 +147,7 @@
 <div class='gallery-grid' class:mobile={is_mobile}>
     {#each builds as build, i}
         <button class='pane thumb-button' onclick={() => goto(`?build=${i + 1}`)}>
-            <img class='thumb' src='/i/SETS/gallery_thumbs/{build.file}.webp' alt={build.title}>
+            <img class='thumb' src='/i/gallery_thumbs/{build.file}.webp' alt={build.title}>
             <p class='thumb-title' title={build.title}>{build.title}</p>
         </button>
     {/each}

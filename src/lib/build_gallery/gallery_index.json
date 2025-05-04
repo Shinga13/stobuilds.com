@@ -1,5 +1,17 @@
 [
     {
+        "title": "Budget Phaser CSV build on the Hirogen Hunter Heavy Escort",
+        "file": "Hirogen Hunter Phaser CSV",
+        "author": "Mara",
+        "desc": "Made by Mara. Updated for 2025. https://www.youtube.com/@MaraMakesContent"
+    },
+    {
+        "title": "Midrange Polaron CSV build on the Fleet Soyuz Intel Heavy Frigate",
+        "file": "Fleet Soyuz Polaron CSV",
+        "author": "Mara",
+        "desc": "Made by Mara. https://www.youtube.com/@MaraMakesContent"
+    },
+    {
         "title": "Clicky-focused EPG build on the Sui'Mor Temporal Science Vessel",
         "file": "Sui'Mor EPG",
         "author": "HornblowersHeir",
@@ -40,5 +52,11 @@
         "file": "Garrett Disruptor CSV",
         "author": "Z",
         "desc": "For general content."
+    },
+    {
+        "title": "Qowaht Milat themed ground build",
+        "file": "Qowat Milat ground build",
+        "author": "Mara",
+        "desc": "For Solo Into The Hive."
     }
 ]
