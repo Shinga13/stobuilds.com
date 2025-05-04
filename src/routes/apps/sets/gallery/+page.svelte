@@ -133,9 +133,9 @@
         </div>
         <p class='popout-desc' class:compact_view>{builds[show_build].desc}</p>
         <div class='img-container'>
-            <img class='popout-img' class:compact_view src='/i/gallery_builds/{builds[show_build].file}.png' alt={builds[show_build].title} loading="lazy">
+            <img class='popout-img' class:compact_view src='/assets/gallery_builds/{builds[show_build].file}.png' alt={builds[show_build].title} loading="lazy">
             <div class='flexbar'>
-                <a class='download-link' href='/i/gallery_builds/{builds[show_build].file}.png' download>Download</a>
+                <a class='download-link' href='/assets/gallery_builds/{builds[show_build].file}.png' download>Download</a>
                 <p class='popout-author'>Author: {builds[show_build].author}</p>
             </div>
         </div>
@@ -147,7 +147,7 @@
 <div class='gallery-grid' class:mobile={is_mobile}>
     {#each builds as build, i}
         <button class='pane thumb-button' onclick={() => goto(`?build=${i + 1}`)}>
-            <img class='thumb' src='/i/gallery_thumbs/{build.file}.webp' alt={build.title}>
+            <img class='thumb' src='/assets/gallery_thumbs/{build.file}.webp' alt={build.title}>
             <p class='thumb-title' title={build.title}>{build.title}</p>
         </button>
     {/each}
