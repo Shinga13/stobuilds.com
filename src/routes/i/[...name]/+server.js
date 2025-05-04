@@ -8,7 +8,7 @@ if (in_dev) {
     IMG_DIR = 'static/assets';
 }
 else {
-    IMG_DIR = 'assets';
+    IMG_DIR = '/assets';
 }
 
 export async function GET({ params }) {
