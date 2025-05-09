@@ -12,7 +12,9 @@
     function search(term) {
         if (search_ready && term !== '') {
             const result = search_index.search(term);
-            return result.map(route => {return {title: search_data[route].title, route: route}});
+            return result.map(route => {
+                return {title: search_data[route].title, route: search_data[route].route};
+            });
         }
         else {
             return [];
@@ -88,10 +90,11 @@
         box-shadow: none;
         box-sizing: border-box;
         display: block;
+        outline: none;
         padding: 0.2rem 0.2rem 0.1rem 0.2rem;
         width: 100%;
     }
-    .search_result:hover {
+    .search_result:hover, .search_result:focus {
         background-color: var(--lbg);
     }
     

@@ -1,7 +1,6 @@
 import fs from 'node:fs';
 import categories from '../builds_guides/_categories.js';
 import showdown from "showdown";
-import flexsearch from "flexsearch";
 
 
 function get_file_name(file_name) {
