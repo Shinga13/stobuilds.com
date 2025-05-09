@@ -3,7 +3,6 @@ title: Phaser Cannons Bajoran Interceptor
 description: Classic Phaser Dual Heavy Cannon build with one torpedo and isomags. Uses Promo and Lockbox equipment.
 tags: Pahvan Proton Beam
 ---
-
 **Basic Information** | **Data** 
 :--- | :--- 
 *Ship Name* | Kira 
@@ -14,13 +13,6 @@ tags: Pahvan Proton Beam
 *Player Species* | Bajoran 
 *Primary Specialization* | Intelligence 
 *Secondary Specialization* | Strategist 
-
-
-## Build Description
-
-nag
-
-
 
 ## Ship Equipment
 
@@ -65,8 +57,8 @@ nag
 
 ## Bridge Officer Stations
 
-**Profession** | **Power** | **Notes**
-:-|:-|:-
+**Profession**|**Power**|**Notes**
+:--|:--|:--
 **Commander Tactical**|[Kemocite-Laced Weaponry](https://stowiki.net/wiki/Ability:_Kemocite-Laced_Weaponry)|
 &nbsp;|[Attack Pattern Beta](https://stowiki.net/wiki/Ability:_Attack_Pattern_Beta)|
 &nbsp;|[Torpedo: Spread](https://stowiki.net/wiki/Ability:_Torpedo:_Spread)|
@@ -90,8 +82,8 @@ nag
 
 ## Traits
 
-**Starship Traits** | **Notes**
-:-|:-
+**Starship Traits**|**Notes**
+:--|:--
 [Withering Barrage](https://stowiki.net/wiki/Trait:_Withering_Barrage)|
 [Emergency Weapon Cycle](https://stowiki.net/wiki/Trait:_Emergency_Weapon_Cycle)|
 [Temporal Tunneling](https://stowiki.net/wiki/Trait:_Temporal_Tunneling)|
@@ -102,8 +94,8 @@ nag
 
 &#x200B;
 
-**Personal Space Traits** | **Notes**
-:-|:-
+**Personal Space Traits**|**Notes**
+:--|:--
 [The Boimler Effect](https://stowiki.net/wiki/Trait:_The_Boimler_Effect)|
 [Unconventional Systems](https://stowiki.net/wiki/Trait:_Unconventional_Systems)|
 [Duelist's Fervor](https://stowiki.net/wiki/Trait:_Duelist's_Fervor)|
@@ -117,8 +109,8 @@ nag
 
 &#x200B;
 
-**Space Reputation Traits** | **Notes**
-:-|:-
+**Space Reputation Traits**|**Notes**
+:--|:--
 [Advanced Targeting Systems](https://stowiki.net/wiki/Trait:_Advanced_Targeting_Systems)|
 [Energy Refrequencer](https://stowiki.net/wiki/Trait:_Energy_Refrequencer)|
 [Precision](https://stowiki.net/wiki/Trait:_Precision)|
@@ -128,8 +120,8 @@ nag
 
 &#x200B;
 
-**Active Space Reputation Traits** | **Notes**
-:-|:-
+**Active Space Reputation Traits**|**Notes**
+:--|:--
 [Anti-Time Entanglement Singularity](https://stowiki.net/wiki/Trait:_Anti-Time_Entanglement_Singularity)|
 [Bio-Molecular Shield Generator](https://stowiki.net/wiki/Trait:_Bio-Molecular_Shield_Generator)|
 [Deploy Sensor Interference Platform](https://stowiki.net/wiki/Trait:_Deploy_Sensor_Interference_Platform)|
@@ -140,8 +132,8 @@ nag
 
 ## Active Space Duty Officers
 
-**Specialization** | **Power** | **Notes**
-:-|:-|:-
+**Specialization**|**Power**|**Notes**
+:--|:--|:--
 [Conn Officer](https://stowiki.net/wiki/Specialization:_Conn_Officer)|[SP] Recharges Evasive Maneuvers when Emergency Power to Engines is activated.|
 [Nurse](https://stowiki.net/wiki/Specialization:_Nurse)|[SP] Increases Hull Regeneration|
 [Energy Weapons Officer](https://stowiki.net/wiki/Specialization:_Energy_Weapons_Officer)|[SP] Chance for stacking Crit Severity buff on firing Energy Weapons|
