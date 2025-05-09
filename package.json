@@ -1,7 +1,7 @@
 {
 	"name": "stobuilds.com",
 	"private": true,
-	"version": "3.2.7",
+	"version": "3.2.8",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
@@ -15,7 +15,7 @@
 		"@sveltejs/vite-plugin-svelte": "^5.0.3",
 		"showdown": "^2.1.0",
 		"svelte": "^5.28.2",
-		"vite": "^6.3.5"
+		"vite": "^6.0.0"
 	},
 	"dependencies": {
 		"@fontsource-variable/overpass": "^5.1.2",
